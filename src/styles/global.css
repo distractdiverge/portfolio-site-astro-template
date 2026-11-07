@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+  /* Shared by the header and the popover so the menu sits right under the bar. */
+  --header-h: 3.5rem;
+}

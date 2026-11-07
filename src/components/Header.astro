@@ -1,0 +1,138 @@
+---
+const links = [
+  { href: '/', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/education', label: 'Education' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/projects', label: 'Projects' },
+];
+
+const path = Astro.url.pathname;
+---
+
+<header
+  class="header sticky top-0 z-10 flex h-[var(--header-h)] items-center justify-between bg-emerald-800 px-6 text-emerald-50 shadow-md"
+>
+  <a href="/" class="text-lg font-semibold tracking-wide">Rainbowfern</a>
+
+  <button
+    type="button"
+    class="hamburger flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+    popovertarget="mobile-menu"
+    popovertargetaction="toggle"
+    aria-controls="mobile-menu"
+    aria-label="Toggle navigation menu"
+  >
+    <span class="bar block h-0.5 w-6 rounded-full bg-current"></span>
+    <span class="bar block h-0.5 w-6 rounded-full bg-current"></span>
+    <span class="bar block h-0.5 w-6 rounded-full bg-current"></span>
+  </button>
+</header>
+
+<nav
+  id="mobile-menu"
+  popover="auto"
+  aria-label="Main"
+  class="bg-emerald-900 text-emerald-50 shadow-2xl"
+>
+  <ul class="flex flex-col gap-1">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-current={path === link.href ? 'page' : undefined}
+            class="block rounded-md px-4 py-3 text-lg hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-300 aria-[current=page]:bg-emerald-700 aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  /* ---------- Popover panel: slide in from the right, slide out on close ---------- */
+  #mobile-menu {
+    position: fixed;
+    inset: auto;
+    top: var(--header-h);
+    right: 0;
+    left: auto;
+    margin: 0;
+    width: min(80vw, 18rem);
+    height: calc(100dvh - var(--header-h));
+    padding: 1rem;
+    border: 0;
+    border-radius: 0;
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      overlay 0.3s allow-discrete,
+      display 0.3s allow-discrete;
+  }
+
+  #mobile-menu:popover-open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Entry frame: the panel starts off-screen so it animates in on open. */
+  @starting-style {
+    #mobile-menu:popover-open {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Only dim the page below the header, so the hamburger/X stays tappable. */
+  #mobile-menu::backdrop {
+    background: rgb(0 0 0 / 0.35);
+    clip-path: inset(var(--header-h) 0 0 0);
+    transition:
+      background-color 0.3s ease,
+      overlay 0.3s allow-discrete,
+      display 0.3s allow-discrete;
+  }
+
+  @starting-style {
+    #mobile-menu:popover-open::backdrop {
+      background-color: rgb(0 0 0 / 0);
+    }
+  }
+
+  /* ---------- Hamburger → X (CSS only) ---------- */
+  .bar {
+    transform-origin: center;
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  /* The menu is open when the header's sibling popover matches :popover-open. */
+  .header:has(~ #mobile-menu:popover-open) .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .header:has(~ #mobile-menu:popover-open) .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header:has(~ #mobile-menu:popover-open) .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* ---------- Respect reduced-motion preferences ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    #mobile-menu,
+    #mobile-menu::backdrop,
+    .bar {
+      transition: none;
+    }
+  }
+</style>
