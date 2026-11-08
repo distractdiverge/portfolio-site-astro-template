@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    name: string;
+    className?: string;
+}
+
+// Devicon icon names mapping
+const deviconMap: Record<string, {name: string, version?: string}> = {
+    'UML': {name: 'unifiedmodelinglanguage', version: 'plain'},
+    'C#': {name: 'csharp', version: 'line'},
+    'Python': {name: 'python', version: 'original'},
+    '.NET': {name: 'dot-net', version: 'plain'},
+    'Javascript': {name: 'javascript', version: 'original'},
+    'NodeJS': {name: 'nodejs', version: 'original-wordmark'},
+    'jQuery': {name: 'jquery', version: 'plain'},
+    'Typescript': {name: 'typescript', version: 'original'},
+    'AngularJS': {name: 'angularjs', version: 'plain'},
+    'React': {name: 'react', version: 'original-wordmark'},
+    'Team City': {name: 'jetbrains', version: 'original'},
+    'NextJS': {name: 'nextjs', version: 'original-wordmark'},
+    'Bootstrap': {name: 'bootstrap', version: 'original'},
+    'LESS': {name: 'less', version: 'plain-wordmark'},
+    'SASS': {name: 'sass', version: 'original'},
+    'Java': {name: 'java', version: 'original-wordmark'},
+    'BackboneJS': {name: 'backbonejs', version: 'original' },
+    'Ruby': {name: 'ruby', version: 'original'},
+    'PHP': {name: 'php', version: 'plain'},
+    'Vite': {name: 'vite', version: 'original'},
+    'Figma': {name: 'figma', version: 'original'},
+    'Jenkins': {name: 'jenkins', version: 'original' },
+    'Confluence': {name: 'confluence', version: 'original' },
+    'Jira': {name: 'jira', version: 'original' },
+    'Bamboo': {name: 'bamboo', version: 'original' },
+    'Drupal': {name: 'drupal', version: 'original' },
+    'Wordpress': {name: 'wordpress', version: 'plain' },
+};
+
+const { name, className = '' } = Astro.props;
+
+const icon = deviconMap[name] || null;
+const iconName = icon ? icon.name : null;
+const iconVersion = icon ? icon.version ? icon.version : 'original' : 'original';
+  
+// TODO: Pull these icons locally.
+const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconName}/${iconName}-${iconVersion}.svg`;
+
+
+let fallbackName = '?';
+if (name && name.length > 0) {
+    fallbackName = name[0];
+}
+---
+
+<div>
+    { iconName 
+        ? <img src={iconUrl} alt={name} class={`w-5 h-5 ${className}`} />
+        : <div class="flex items-center justify-center w-5 h-5 rounded text-xs font-medium">{fallbackName}</div>
+    }
+</div>
