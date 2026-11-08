@@ -40,7 +40,7 @@ const { Content } = await render(project);
       <h1 class="p-6 text-3xl font-bold text-white sm:text-4xl">{title}</h1>
     </header>
 
-    <p class="mt-4 text-sm text-stone-500">
+    <p class="mt-4 text-sm text-ink-subtle">
       Started <time datetime={startedDate.toISOString()}>{formatMonthYear(startedDate)}</time>
       {
         lastUpdated && (
@@ -51,7 +51,7 @@ const { Content } = await render(project);
       }
     </p>
 
-    <p class="mt-6 text-lg text-stone-700">{description}</p>
+    <p class="mt-6 text-lg text-ink-soft">{description}</p>
 
     <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
       <a
@@ -66,7 +66,7 @@ const { Content } = await render(project);
       assets.length > 0 && (
         <section class="mt-8">
           <h2 class="text-lg font-semibold text-heading">Assets</h2>
-          <ul class="mt-2 list-inside list-disc space-y-1 text-stone-700">
+          <ul class="mt-2 list-inside list-disc space-y-1 text-ink-soft">
             {assets.map((asset) => (
               <li>
                 <a
@@ -82,11 +82,11 @@ const { Content } = await render(project);
       )
     }
 
-    <div class="prose prose-stone mt-10 max-w-none">
+    <div class="prose mt-10 max-w-none">
       <Content />
     </div>
 
-    <p class="mt-16 border-t border-stone-200 pt-6">
+    <p class="mt-16 border-t border-line pt-6">
       <a href="/projects" class="font-semibold text-link hover:underline">← All projects</a>
     </p>
   </article>

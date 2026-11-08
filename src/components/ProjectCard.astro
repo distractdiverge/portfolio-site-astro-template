@@ -14,7 +14,7 @@ const image = thumbnail ?? headerImage;
 
 <a
   href={`/projects/${project.id}`}
-  class="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow ring-1 ring-stone-200 transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-focus-light"
+  class="group flex h-full flex-col overflow-hidden rounded-lg bg-card shadow ring-1 ring-line transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-focus-light"
 >
   <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-fallback-from to-fallback-to">
     {
@@ -32,6 +32,6 @@ const image = thumbnail ?? headerImage;
     <h2 class="line-clamp-2 text-lg font-semibold text-heading group-hover:underline">
       {title}
     </h2>
-    <p class="line-clamp-3 flex-1 text-sm text-stone-600">{description}</p>
+    <p class="line-clamp-3 flex-1 text-sm text-ink-muted">{description}</p>
   </div>
 </a>

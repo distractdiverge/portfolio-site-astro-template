@@ -1,0 +1,92 @@
+<footer class="bg-header text-on-brand">
+  <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4 text-sm">
+    <p>© {new Date().getFullYear()} Rainbowfern</p>
+
+    <button
+      type="button"
+      id="theme-toggle"
+      role="switch"
+      aria-checked="false"
+      class="theme-switch flex cursor-pointer items-center gap-3 rounded-md px-2 py-1 hover:bg-nav-hover focus-visible:outline-2 focus-visible:outline-focus-dark"
+    >
+      <span>Dark theme</span>
+      <span class="track relative inline-block h-6 w-11 rounded-full bg-black/30 transition-colors">
+        <span class="knob absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-on-brand transition-transform"></span>
+      </span>
+    </button>
+  </div>
+</footer>
+
+<style>
+  .theme-switch[aria-checked='true'] .track {
+    background-color: var(--color-focus-dark);
+  }
+
+  .theme-switch[aria-checked='true'] .knob {
+    transform: translateX(1.25rem);
+    background-color: var(--color-header);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .track,
+    .knob {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // Theme behaviour. The <head> script in Layout.astro applies the initial theme
+  // before first paint; this script wires up the toggle and follows OS changes.
+  //
+  // Rules:
+  //  - With no override, the site follows the OS / browser colour scheme.
+  //  - Choosing the opposite of the OS scheme stores an override for this visit
+  //    (sessionStorage, so it ends with the tab/session).
+  //  - Choosing the OS scheme again clears the override.
+
+  const STORAGE_KEY = 'theme-override';
+  const root = document.documentElement;
+  const toggle = document.getElementById('theme-toggle') as HTMLButtonElement | null;
+  const systemQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  type Theme = 'light' | 'dark';
+
+  const systemTheme = (): Theme => (systemQuery.matches ? 'dark' : 'light');
+
+  const readOverride = (): Theme | null => {
+    try {
+      const value = sessionStorage.getItem(STORAGE_KEY);
+      return value === 'light' || value === 'dark' ? value : null;
+    } catch {
+      return null; // storage can be blocked (private mode, disabled cookies)
+    }
+  };
+
+  const writeOverride = (theme: Theme | null) => {
+    try {
+      if (theme) sessionStorage.setItem(STORAGE_KEY, theme);
+      else sessionStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // ignore: the toggle still works for this page view
+    }
+  };
+
+  const applyTheme = (theme: Theme) => {
+    root.dataset.theme = theme;
+    toggle?.setAttribute('aria-checked', String(theme === 'dark'));
+  };
+
+  applyTheme((root.dataset.theme as Theme | undefined) ?? systemTheme());
+
+  toggle?.addEventListener('click', () => {
+    const next: Theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    writeOverride(next === systemTheme() ? null : next);
+  });
+
+  // Follow the OS when it changes, unless the user has an override.
+  systemQuery.addEventListener('change', () => {
+    if (!readOverride()) applyTheme(systemTheme());
+  });
+</script>

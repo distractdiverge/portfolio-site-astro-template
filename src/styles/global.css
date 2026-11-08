@@ -6,3 +6,20 @@
   /* Shared by the header and the popover so the menu sits right under the bar. */
   --header-h: 3.5rem;
 }
+
+/* Markdown body colours come from the theme variables, so they follow light and dark. */
+.prose {
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-heading);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-links: var(--color-link);
+  --tw-prose-counters: var(--color-ink-subtle);
+  --tw-prose-bullets: var(--color-ink-subtle);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-line);
+  --tw-prose-captions: var(--color-ink-subtle);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-th-borders: var(--color-line);
+  --tw-prose-td-borders: var(--color-line);
+}
