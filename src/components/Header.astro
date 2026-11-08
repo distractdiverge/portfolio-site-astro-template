@@ -14,9 +14,13 @@ const isCurrent = (href: string) =>
 ---
 
 <header
-  class="header sticky top-0 z-10 flex h-[var(--header-h)] items-center justify-between bg-header px-6 text-on-brand shadow-md"
+  class="header sticky top-0 z-10 flex h-[var(--header-h)] items-center justify-between border-b border-line bg-header px-6 text-on-brand"
 >
-  <a href="/" class="text-lg font-semibold tracking-wide">Rainbowfern</a>
+  <a href="/" class="flex items-center gap-2 text-lg font-semibold tracking-wide">
+    <!-- Decorative: the wordmark carries the name, so the fern is hidden from screen readers. -->
+    <img src="/brand/rainbow-fern.svg" alt="" width="28" height="28" class="h-7 w-7" />
+    Rainbowfern
+  </a>
 
   <nav aria-label="Main" class="hidden lg:block">
     <ul class="flex items-center gap-1">
@@ -54,7 +58,7 @@ const isCurrent = (href: string) =>
   id="mobile-menu"
   popover="auto"
   aria-label="Main"
-  class="bg-menu text-on-brand shadow-2xl lg:hidden"
+  class="bg-menu text-on-brand shadow-paper-md lg:hidden"
 >
   <ul class="flex flex-col gap-1">
     {
@@ -86,6 +90,7 @@ const isCurrent = (href: string) =>
     height: calc(100dvh - var(--header-h));
     padding: 1rem;
     border: 0;
+    border-left: 1px solid var(--color-line);
     border-radius: 0;
     overflow-y: auto;
 

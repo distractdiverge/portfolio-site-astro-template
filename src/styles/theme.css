@@ -1,72 +1,94 @@
 /*
- * Theme colours: the single place to change the site's colours, for both themes.
+ * Theme tokens: the single place to change the site's colours, type, radii and shadows.
+ * Source of truth: .design-intelligence/tokens/ (colors.json, typography.json, radii.json,
+ * shadows.json). Keep these values in sync with those files.
  *
- * The palette is mostly grayscale so project images and artwork stand out.
- * One accent colour (purple) marks links, focus rings and the current page.
+ * Light: ink black on warm off-white paper. Dark: a near-black terminal screen with
+ * purple accents. Solid colours only: no gradients.
  *
- * Each variable is named for its role, not its shade. Change a value here and
- * every component that uses it updates. Because these are declared in @theme,
- * they are also plain CSS custom properties on :root (e.g. var(--color-header)).
- * Tailwind generates utilities from them: bg-header, text-accent, bg-page, etc.
+ * Each variable is named for its role, not its shade. Because these are declared in
+ * @theme, they are also plain CSS custom properties on :root (e.g. var(--color-header)).
+ * Tailwind generates utilities from them: bg-header, text-accent, shadow-paper, etc.
  *
- * Light values are the defaults. The dark overrides below apply when the
- * <html> element has data-theme="dark" (set by the theme toggle in the footer).
- * The comments show the Tailwind palette shade each value came from.
+ * Light values are the defaults. The dark overrides below apply when the <html>
+ * element has data-theme="dark" (set by the theme toggle in the footer).
  */
 @theme {
-  /* Page surfaces and text (light) */
-  --color-page: #fff;
-  --color-card: #fff;
-  --color-line: oklch(92.2% 0 none); /* neutral-200: borders and rings */
-  --color-ink: oklch(20.5% 0 none); /* neutral-900: body text */
-  --color-ink-soft: oklch(37.1% 0 none); /* neutral-700: paragraphs */
-  --color-ink-muted: oklch(43.9% 0 none); /* neutral-600: card descriptions */
-  --color-ink-subtle: oklch(55.6% 0 none); /* neutral-500: meta lines */
-  --color-heading: oklch(20.5% 0 none); /* neutral-900 */
+  /* Typography: system stacks, so nothing is downloaded and text renders instantly */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* Header bar (very light gray) */
-  --color-header: oklch(97% 0 none); /* neutral-100 */
-  --color-on-brand: oklch(20.5% 0 none); /* neutral-900: text on header and menu */
-  --color-nav-hover: oklch(92.2% 0 none); /* neutral-200: slightly darker on hover */
+  /* Page surfaces and text (light): warm paper, ink black */
+  --color-page: oklch(98.2% 0.012 85); /* warm off-white paper */
+  --color-card: oklch(99.5% 0.005 85); /* a lighter sheet above the paper */
+  --color-line: oklch(86% 0.008 300); /* decorative dividers only */
+  --color-line-strong: oklch(55% 0.01 300); /* input borders and UI boundaries (3:1) */
+  --color-ink: oklch(20% 0.01 300); /* body text */
+  --color-ink-soft: oklch(32% 0.01 300); /* paragraphs */
+  --color-ink-muted: oklch(40% 0.01 300); /* card descriptions */
+  --color-ink-subtle: oklch(46% 0.01 300); /* meta lines */
+  --color-heading: oklch(20% 0.01 300);
+
+  /* Header bar: the same sheet as the page, separated by a rule */
+  --color-header: oklch(98.2% 0.012 85);
+  --color-on-brand: oklch(20% 0.01 300); /* text on header and menu */
+  --color-nav-hover: oklch(93% 0.01 300);
 
   /* Mobile popover panel */
-  --color-menu: oklch(97% 0 none); /* neutral-100 */
-  --color-menu-hover: oklch(92.2% 0 none); /* neutral-200 */
-  --color-menu-current: oklch(87% 0 none); /* neutral-300 */
+  --color-menu: oklch(99.5% 0.005 85);
+  --color-menu-hover: oklch(93% 0.01 300);
+  --color-menu-current: oklch(90% 0.02 300);
 
-  /* Accent: links, focus rings, current page */
-  --color-accent: oklch(49.6% 0.265 301.924); /* purple-700 */
+  /* Accent: links, focus rings, current page, toggle on-state */
+  --color-accent: oklch(49.6% 0.265 301.924); /* purple-700: AA text on paper and card */
+  --color-on-accent: oklch(99.5% 0.005 85); /* text on accent-filled controls */
 
-  /* Gradient shown when a project has no image */
-  --color-fallback-from: oklch(70.8% 0 none); /* neutral-400 */
-  --color-fallback-to: oklch(43.9% 0 none); /* neutral-600 */
+  /* Status (for forms and messages) */
+  --color-success: oklch(42% 0.12 155);
+  --color-error: oklch(45% 0.19 27);
+
+  /* Solid placeholder shown when a project has no image (replaces the old gradient) */
+  --color-fallback: oklch(86% 0.008 300);
+
+  /* Elevation: one soft lift for paper sheets */
+  --shadow-paper: 0 1px 2px oklch(20% 0.01 300 / 0.08);
+  --shadow-paper-md: 0 2px 8px oklch(20% 0.01 300 / 0.1);
 }
 
-/* Dark theme: overrides the values above. */
+/* Dark theme: a terminal-style screen. Overrides the values above. */
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --color-page: oklch(26.9% 0 none); /* neutral-800: neutral gray background */
-  --color-card: oklch(37.1% 0 none); /* neutral-700: cards sit above the page */
-  --color-line: oklch(43.9% 0 none); /* neutral-600 */
-  --color-ink: #fff; /* white text */
-  --color-ink-soft: oklch(92.2% 0 none); /* neutral-200 */
-  --color-ink-muted: oklch(87% 0 none); /* neutral-300 */
-  --color-ink-subtle: oklch(70.8% 0 none); /* neutral-400 */
-  --color-heading: #fff;
+  --color-page: oklch(19% 0.015 300); /* near-black, never pure #000 */
+  --color-card: oklch(24% 0.015 300);
+  --color-line: oklch(32% 0.015 300);
+  --color-line-strong: oklch(58% 0.015 300);
+  --color-ink: oklch(95% 0.006 300);
+  --color-ink-soft: oklch(88% 0.01 300);
+  --color-ink-muted: oklch(80% 0.01 300);
+  --color-ink-subtle: oklch(72% 0.01 300);
+  --color-heading: oklch(95% 0.006 300);
 
-  --color-header: oklch(20.5% 0 none); /* neutral-900: darker gray header */
-  --color-on-brand: #fff; /* text on header and menu */
-  --color-nav-hover: oklch(26.9% 0 none); /* neutral-800 */
+  --color-header: oklch(19% 0.015 300);
+  --color-on-brand: oklch(95% 0.006 300);
+  --color-nav-hover: oklch(26% 0.015 300);
 
-  --color-menu: oklch(14.5% 0 none); /* neutral-950: darkest panel */
-  --color-menu-hover: oklch(20.5% 0 none); /* neutral-900 */
-  --color-menu-current: oklch(26.9% 0 none); /* neutral-800 */
+  --color-menu: oklch(24% 0.015 300);
+  --color-menu-hover: oklch(29% 0.015 300);
+  --color-menu-current: oklch(32% 0.015 300);
 
-  --color-accent: oklch(82.7% 0.119 306.383); /* purple-300: readable on dark gray */
+  --color-accent: oklch(82.7% 0.119 306.4); /* purple-300: AA on the dark surfaces */
+  --color-on-accent: oklch(19% 0.015 300);
 
-  --color-fallback-from: oklch(43.9% 0 none); /* neutral-600 */
-  --color-fallback-to: oklch(20.5% 0 none); /* neutral-900 */
+  --color-success: oklch(80% 0.14 155);
+  --color-error: oklch(78% 0.14 27);
+
+  --color-fallback: oklch(32% 0.015 300);
+
+  /* Dark surfaces use borders and surface colour instead of shadows */
+  --shadow-paper: none;
+  --shadow-paper-md: none;
 }
 
 :root[data-theme='light'] {

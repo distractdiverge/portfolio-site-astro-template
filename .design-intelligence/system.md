@@ -8,8 +8,8 @@ Source of truth for the personal consulting CV site. Read this first on every se
 |-------|--------|-------|
 | 1. Context | Done | Audience and task confirmed by the owner. |
 | 2. Domain | Done | Vocabulary, colors, signature, rejected defaults confirmed. |
-| 3. Direction & tokens | Done | Utility 70% + Warmth 30%, confirmed. Tokens in `tokens/`, contrast verified. Not yet applied to the site. |
-| 4. Design & create | Not started | |
+| 3. Direction & tokens | Done | Utility 70% + Warmth 30%, confirmed. Tokens in `tokens/`, contrast verified. |
+| 4. Design & create | Partly done | Tokens applied to theme and components, gradients removed, fern in header. See `decisions/001-apply-tokens-to-site.md`. Home page copy and photos still pending. |
 | 5. Document & handoff | Not started | |
 | 6. Audit | Not started | |
 
