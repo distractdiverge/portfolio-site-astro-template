@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getProjects } from '../../lib/projects';
+
+const projects = await getProjects();
+---
+
+<Layout title="Projects" wide>
+  <h1 class="text-3xl font-bold text-emerald-900">Projects</h1>
+  <ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {
+      projects.map((project) => (
+        <li class="flex">
+          <ProjectCard project={project} />
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
