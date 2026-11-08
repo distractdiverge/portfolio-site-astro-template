@@ -25,7 +25,7 @@ const { Content } = await render(project);
          No positioned ancestor, so `left` is measured from the page edge, not the column. -->
     <a
       href="/projects"
-      class="hidden whitespace-nowrap text-sm font-semibold text-link hover:underline lg:absolute lg:left-6 lg:top-[calc(var(--header-h)+2.5rem)] lg:block"
+      class="hidden whitespace-nowrap text-sm font-semibold text-accent hover:underline lg:absolute lg:left-6 lg:top-[calc(var(--header-h)+2.5rem)] lg:block"
     >← All projects</a>
 
     <header
@@ -58,7 +58,7 @@ const { Content } = await render(project);
         href={codeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="font-semibold text-link hover:underline">Code →</a
+        class="font-semibold text-accent hover:underline">Code →</a
       >
     </div>
 
@@ -73,7 +73,7 @@ const { Content } = await render(project);
                   href={asset.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-link hover:underline">{asset.label}</a
+                  class="text-accent hover:underline">{asset.label}</a
                 >
               </li>
             ))}
@@ -87,7 +87,7 @@ const { Content } = await render(project);
     </div>
 
     <p class="mt-16 border-t border-line pt-6">
-      <a href="/projects" class="font-semibold text-link hover:underline">← All projects</a>
+      <a href="/projects" class="font-semibold text-accent hover:underline">← All projects</a>
     </p>
   </article>
 </Layout>

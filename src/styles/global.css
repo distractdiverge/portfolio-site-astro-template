@@ -12,7 +12,7 @@
   --tw-prose-body: var(--color-ink-soft);
   --tw-prose-headings: var(--color-heading);
   --tw-prose-bold: var(--color-ink);
-  --tw-prose-links: var(--color-link);
+  --tw-prose-links: var(--color-accent);
   --tw-prose-counters: var(--color-ink-subtle);
   --tw-prose-bullets: var(--color-ink-subtle);
   --tw-prose-hr: var(--color-line);

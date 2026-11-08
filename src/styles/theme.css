@@ -1,10 +1,13 @@
 /*
  * Theme colours: the single place to change the site's colours, for both themes.
  *
+ * The palette is mostly grayscale so project images and artwork stand out.
+ * One accent colour (purple) marks links, focus rings and the current page.
+ *
  * Each variable is named for its role, not its shade. Change a value here and
  * every component that uses it updates. Because these are declared in @theme,
  * they are also plain CSS custom properties on :root (e.g. var(--color-header)).
- * Tailwind generates utilities from them: bg-header, text-heading, bg-page, etc.
+ * Tailwind generates utilities from them: bg-header, text-accent, bg-page, etc.
  *
  * Light values are the defaults. The dark overrides below apply when the
  * <html> element has data-theme="dark" (set by the theme toggle in the footer).
@@ -12,60 +15,58 @@
  */
 @theme {
   /* Page surfaces and text (light) */
-  --color-page: oklch(98.5% 0.001 106.423); /* stone-50 */
+  --color-page: #fff;
   --color-card: #fff;
-  --color-line: oklch(92.3% 0.003 48.717); /* stone-200: borders and rings */
-  --color-ink: oklch(21.6% 0.006 56.043); /* stone-900: body text */
-  --color-ink-soft: oklch(37.4% 0.01 67.558); /* stone-700: paragraphs */
-  --color-ink-muted: oklch(44.4% 0.011 73.639); /* stone-600: card descriptions */
-  --color-ink-subtle: oklch(55.3% 0.013 58.071); /* stone-500: meta lines */
+  --color-line: oklch(92.2% 0 none); /* neutral-200: borders and rings */
+  --color-ink: oklch(20.5% 0 none); /* neutral-900: body text */
+  --color-ink-soft: oklch(37.1% 0 none); /* neutral-700: paragraphs */
+  --color-ink-muted: oklch(43.9% 0 none); /* neutral-600: card descriptions */
+  --color-ink-subtle: oklch(55.6% 0 none); /* neutral-500: meta lines */
+  --color-heading: oklch(20.5% 0 none); /* neutral-900 */
 
-  /* Header bar */
-  --color-header: oklch(43.2% 0.095 166.913); /* emerald-800 */
-  --color-on-brand: oklch(97.9% 0.021 166.113); /* emerald-50: text on header and menu */
-  --color-nav-hover: oklch(50.8% 0.118 165.612); /* emerald-700: desktop nav hover */
+  /* Header bar (very light gray) */
+  --color-header: oklch(97% 0 none); /* neutral-100 */
+  --color-on-brand: oklch(20.5% 0 none); /* neutral-900: text on header and menu */
+  --color-nav-hover: oklch(92.2% 0 none); /* neutral-200: slightly darker on hover */
 
   /* Mobile popover panel */
-  --color-menu: oklch(37.8% 0.077 168.94); /* emerald-900 */
-  --color-menu-hover: oklch(43.2% 0.095 166.913); /* emerald-800 */
-  --color-menu-current: oklch(50.8% 0.118 165.612); /* emerald-700: current page */
+  --color-menu: oklch(97% 0 none); /* neutral-100 */
+  --color-menu-hover: oklch(92.2% 0 none); /* neutral-200 */
+  --color-menu-current: oklch(87% 0 none); /* neutral-300 */
 
-  /* Page content */
-  --color-heading: oklch(37.8% 0.077 168.94); /* emerald-900 */
-  --color-link: oklch(50.8% 0.118 165.612); /* emerald-700 */
-
-  /* Focus outlines */
-  --color-focus-dark: oklch(84.5% 0.143 164.978); /* emerald-300: on green surfaces */
-  --color-focus-light: oklch(69.6% 0.17 162.48); /* emerald-500: on white cards */
+  /* Accent: links, focus rings, current page */
+  --color-accent: oklch(49.6% 0.265 301.924); /* purple-700 */
 
   /* Gradient shown when a project has no image */
-  --color-fallback-from: oklch(50.8% 0.118 165.612); /* emerald-700 */
-  --color-fallback-to: oklch(37.8% 0.077 168.94); /* emerald-900 */
+  --color-fallback-from: oklch(70.8% 0 none); /* neutral-400 */
+  --color-fallback-to: oklch(43.9% 0 none); /* neutral-600 */
 }
 
 /* Dark theme: overrides the values above. */
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --color-page: oklch(14.7% 0.004 49.25); /* stone-950 */
-  --color-card: oklch(21.6% 0.006 56.043); /* stone-900 */
-  --color-line: oklch(26.8% 0.007 34.298); /* stone-800 */
-  --color-ink: oklch(97% 0.001 106.424); /* stone-100 */
-  --color-ink-soft: oklch(86.9% 0.005 56.366); /* stone-300 */
-  --color-ink-muted: oklch(70.9% 0.01 56.259); /* stone-400 */
-  --color-ink-subtle: oklch(70.9% 0.01 56.259); /* stone-400 */
+  --color-page: oklch(26.9% 0 none); /* neutral-800: neutral gray background */
+  --color-card: oklch(37.1% 0 none); /* neutral-700: cards sit above the page */
+  --color-line: oklch(43.9% 0 none); /* neutral-600 */
+  --color-ink: #fff; /* white text */
+  --color-ink-soft: oklch(92.2% 0 none); /* neutral-200 */
+  --color-ink-muted: oklch(87% 0 none); /* neutral-300 */
+  --color-ink-subtle: oklch(70.8% 0 none); /* neutral-400 */
+  --color-heading: #fff;
 
-  --color-header: oklch(37.8% 0.077 168.94); /* emerald-900 */
-  --color-nav-hover: oklch(43.2% 0.095 166.913); /* emerald-800 */
+  --color-header: oklch(20.5% 0 none); /* neutral-900: darker gray header */
+  --color-on-brand: #fff; /* text on header and menu */
+  --color-nav-hover: oklch(26.9% 0 none); /* neutral-800 */
 
-  --color-menu: oklch(26.2% 0.051 172.552); /* emerald-950 */
-  --color-menu-hover: oklch(37.8% 0.077 168.94); /* emerald-900 */
-  --color-menu-current: oklch(43.2% 0.095 166.913); /* emerald-800 */
+  --color-menu: oklch(14.5% 0 none); /* neutral-950: darkest panel */
+  --color-menu-hover: oklch(20.5% 0 none); /* neutral-900 */
+  --color-menu-current: oklch(26.9% 0 none); /* neutral-800 */
 
-  --color-heading: oklch(84.5% 0.143 164.978); /* emerald-300 */
-  --color-link: oklch(76.5% 0.177 163.223); /* emerald-400 */
+  --color-accent: oklch(82.7% 0.119 306.383); /* purple-300: readable on dark gray */
 
-  --color-focus-light: oklch(76.5% 0.177 163.223); /* emerald-400: on dark cards */
+  --color-fallback-from: oklch(43.9% 0 none); /* neutral-600 */
+  --color-fallback-to: oklch(20.5% 0 none); /* neutral-900 */
 }
 
 :root[data-theme='light'] {

@@ -26,7 +26,7 @@ const isCurrent = (href: string) =>
             <a
               href={link.href}
               aria-current={isCurrent(link.href) ? 'page' : undefined}
-              class="block rounded-md px-3 py-2 hover:bg-nav-hover focus-visible:outline-2 focus-visible:outline-focus-dark aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
+              class="block rounded-md px-3 py-2 hover:bg-nav-hover focus-visible:outline-2 focus-visible:outline-accent aria-[current=page]:font-semibold aria-[current=page]:text-accent"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ const isCurrent = (href: string) =>
 
   <button
     type="button"
-    class="hamburger flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-dark lg:hidden"
+    class="hamburger flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:hidden"
     popovertarget="mobile-menu"
     popovertargetaction="toggle"
     aria-controls="mobile-menu"
@@ -63,7 +63,7 @@ const isCurrent = (href: string) =>
           <a
             href={link.href}
             aria-current={isCurrent(link.href) ? 'page' : undefined}
-            class="block rounded-md px-4 py-3 text-lg hover:bg-menu-hover focus-visible:outline-2 focus-visible:outline-focus-dark aria-[current=page]:bg-menu-current aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
+            class="block rounded-md px-4 py-3 text-lg hover:bg-menu-hover focus-visible:outline-2 focus-visible:outline-accent aria-[current=page]:bg-menu-current aria-[current=page]:font-semibold aria-[current=page]:text-accent"
           >
             {link.label}
           </a>
