@@ -2,13 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getFeaturedProjects } from '../lib/projects';
+import ServicesHero from '../components/ServicesHero.astro';
 
 const featured = await getFeaturedProjects(2);
 ---
 
 <Layout title="About">
-  <h1 class="text-3xl font-bold text-heading">About</h1>
-  <p class="mt-4 text-ink-soft">Placeholder content for the About page.</p>
+  <h1 class="text-3xl font-bold text-heading">Rainbow Fern Consulting</h1>
+  <p class="mt-4 text-ink-soft">Hi! I&apos;m Astrid, founder of Rainbow Fern consulting.</p>
+  <p class="mt-4 text-ink-soft">I have worked in the software field for the last 15+ years
+  working up the corp ladder from intern to architect.</p>
+  <p class="mt-4 text-ink-soft">Now, I am focusing on taking on remote projects, mentoring
+  and helping develop amazing test automation suites.</p>
+  <p class="mt-4 text-ink-soft">Take a look below at some recent projects, or details on
+  what I offer as services.</p>
 
   <section class="mt-12">
     <div class="flex items-baseline justify-between gap-4">
@@ -25,4 +32,5 @@ const featured = await getFeaturedProjects(2);
       }
     </ul>
   </section>
+  <ServicesHero />
 </Layout>

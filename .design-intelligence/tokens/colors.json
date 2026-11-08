@@ -40,7 +40,7 @@
     "fallback": "oklch(32% 0.015 300)"
   },
   "signature_rainbow_fern": {
-    "source": "src/assets/projects/fern-colors-web.svg",
+    "source": "src/assets/fern-colors-web.svg",
     "usage": "Decorative only. Never use these colors to convey meaning. Mark the icon with alt=\"\" or aria-hidden.",
     "leaves": {
       "red": "#ff0018",

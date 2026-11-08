@@ -11,7 +11,7 @@
 - `src/components/Footer.astro`: top rule. Toggle track uses `line-strong` instead of `bg-black/30`.
 - `src/components/ProjectCard.astro`: gradient placeholder replaced with the solid `fallback` color. Hover lift removed (shadow change only).
 - `src/pages/projects/[id].astro`: gradient placeholder replaced with solid `fallback`. Gradient title overlay replaced with a solid 60% black scrim.
-- `public/brand/rainbow-fern.svg`: copy of `src/assets/projects/fern-colors-web.svg`, used in the header.
+- `public/brand/rainbow-fern.svg`: copy of `src/assets/fern-colors-web.svg`, used in the header.
 
 ## Why
 

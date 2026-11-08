@@ -28,7 +28,7 @@ postmortem, reliability, handoff, tradeoff, scope, accessibility, fair/balanced,
 
 ## Signature elements
 
-1. **Rainbow fern icon** (`src/assets/projects/fern-colors-web.svg`). Six solid fills: red, orange, yellow, green, blue, purple. Used as the logo and as a recurring icon.
+1. **Rainbow fern icon** (`src/assets/fern-colors-web.svg`). Six solid fills: red, orange, yellow, green, blue, purple. Used as the logo and as a recurring icon.
 2. **Accent colors** carry the rainbow and purple identity.
 3. **Small quirks and icons** across the site.
 4. **Personal imagery:** self-portrait, Shadow the dog, and nature photos. These carry the themes of nature, queerness, dogs, and inclusiveness.
