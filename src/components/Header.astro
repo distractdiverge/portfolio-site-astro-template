@@ -14,7 +14,7 @@ const isCurrent = (href: string) =>
 ---
 
 <header
-  class="header sticky top-0 z-10 flex h-[var(--header-h)] items-center justify-between bg-emerald-800 px-6 text-emerald-50 shadow-md"
+  class="header sticky top-0 z-10 flex h-[var(--header-h)] items-center justify-between bg-header px-6 text-on-brand shadow-md"
 >
   <a href="/" class="text-lg font-semibold tracking-wide">Rainbowfern</a>
 
@@ -26,7 +26,7 @@ const isCurrent = (href: string) =>
             <a
               href={link.href}
               aria-current={isCurrent(link.href) ? 'page' : undefined}
-              class="block rounded-md px-3 py-2 hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-emerald-300 aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
+              class="block rounded-md px-3 py-2 hover:bg-nav-hover focus-visible:outline-2 focus-visible:outline-focus-dark aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ const isCurrent = (href: string) =>
 
   <button
     type="button"
-    class="hamburger flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 lg:hidden"
+    class="hamburger flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-dark lg:hidden"
     popovertarget="mobile-menu"
     popovertargetaction="toggle"
     aria-controls="mobile-menu"
@@ -54,7 +54,7 @@ const isCurrent = (href: string) =>
   id="mobile-menu"
   popover="auto"
   aria-label="Main"
-  class="bg-emerald-900 text-emerald-50 shadow-2xl lg:hidden"
+  class="bg-menu text-on-brand shadow-2xl lg:hidden"
 >
   <ul class="flex flex-col gap-1">
     {
@@ -63,7 +63,7 @@ const isCurrent = (href: string) =>
           <a
             href={link.href}
             aria-current={isCurrent(link.href) ? 'page' : undefined}
-            class="block rounded-md px-4 py-3 text-lg hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-300 aria-[current=page]:bg-emerald-700 aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
+            class="block rounded-md px-4 py-3 text-lg hover:bg-menu-hover focus-visible:outline-2 focus-visible:outline-focus-dark aria-[current=page]:bg-menu-current aria-[current=page]:font-semibold aria-[current=page]:text-amber-300"
           >
             {link.label}
           </a>

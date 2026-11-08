@@ -1,0 +1,33 @@
+/*
+ * Theme colours: the single place to change the site's greens.
+ *
+ * Each variable is named for its role, not its shade. Change a value here and
+ * every component that uses it updates. Because these are declared in @theme,
+ * they are also plain CSS custom properties on :root (e.g. var(--color-header)).
+ * Tailwind generates utilities from them: bg-header, text-heading, from-fallback-from, etc.
+ *
+ * The comments show the original Tailwind emerald shade each value came from.
+ */
+@theme {
+  /* Header bar */
+  --color-header: oklch(43.2% 0.095 166.913); /* emerald-800 */
+  --color-on-brand: oklch(97.9% 0.021 166.113); /* emerald-50: text on header and menu */
+  --color-nav-hover: oklch(50.8% 0.118 165.612); /* emerald-700: desktop nav hover */
+
+  /* Mobile popover panel */
+  --color-menu: oklch(37.8% 0.077 168.94); /* emerald-900 */
+  --color-menu-hover: oklch(43.2% 0.095 166.913); /* emerald-800 */
+  --color-menu-current: oklch(50.8% 0.118 165.612); /* emerald-700: current page */
+
+  /* Page content */
+  --color-heading: oklch(37.8% 0.077 168.94); /* emerald-900 */
+  --color-link: oklch(50.8% 0.118 165.612); /* emerald-700 */
+
+  /* Focus outlines */
+  --color-focus-dark: oklch(84.5% 0.143 164.978); /* emerald-300: on green surfaces */
+  --color-focus-light: oklch(69.6% 0.17 162.48); /* emerald-500: on white cards */
+
+  /* Gradient shown when a project has no image */
+  --color-fallback-from: oklch(50.8% 0.118 165.612); /* emerald-700 */
+  --color-fallback-to: oklch(37.8% 0.077 168.94); /* emerald-900 */
+}
