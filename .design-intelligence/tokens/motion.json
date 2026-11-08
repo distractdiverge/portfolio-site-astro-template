@@ -1,0 +1,34 @@
+{
+  "$description": "Motion tokens. Minor and subtle only. Every animation has a purpose and a static fallback under prefers-reduced-motion.",
+  "durations": {
+    "instant": "0ms",
+    "fast": "150ms",
+    "normal": "250ms",
+    "slow": "400ms"
+  },
+  "easing": {
+    "default": "cubic-bezier(0.23, 1, 0.32, 1)",
+    "enter": "cubic-bezier(0.21, 1.02, 0.73, 1)",
+    "exit": "cubic-bezier(0.06, 0.71, 0.55, 1)",
+    "in-out": "cubic-bezier(0.77, 0, 0.175, 1)"
+  },
+  "allowed": [
+    { "element": "link and button hover", "property": "color, text-decoration-color", "duration": "fast", "easing": "default" },
+    { "element": "focus ring", "property": "outline-color", "duration": "fast", "easing": "default" },
+    { "element": "fern icon accent (leaf highlight on hover)", "property": "opacity", "duration": "fast", "easing": "default", "note": "Optional quirk. Opacity only, no transform." },
+    { "element": "section fade in on scroll", "property": "opacity", "duration": "normal", "easing": "enter", "note": "Optional. Content must be visible without JS and without motion." }
+  ],
+  "forbidden": [
+    "Bounce or spring easing",
+    "Looping or continuous animation",
+    "Parallax or scroll-jacking",
+    "Animation of layout properties (width, height, top, left)",
+    "Animations longer than 400ms",
+    "Any motion that is required to read or use content"
+  ],
+  "reduced_motion": {
+    "query": "@media (prefers-reduced-motion: reduce)",
+    "rule": "Disable all transitions and animations. Color and opacity changes become instant. Content is fully visible and usable without any motion.",
+    "css": "@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }"
+  }
+}

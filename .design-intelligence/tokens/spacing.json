@@ -1,0 +1,49 @@
+{
+  "$description": "Spacing tokens on an 8px base. Generous section spacing keeps each chunk of content separate, so the page reads like a sheet of paper split into small sections.",
+  "base": "8px",
+  "scale": {
+    "space-0": "0px",
+    "space-1": "4px",
+    "space-2": "8px",
+    "space-3": "12px",
+    "space-4": "16px",
+    "space-5": "24px",
+    "space-6": "32px",
+    "space-7": "48px",
+    "space-8": "64px",
+    "space-9": "96px"
+  },
+  "contexts": {
+    "micro": {
+      "icon-to-label": "space-1",
+      "input-padding": "space-3",
+      "button-padding-y": "space-2",
+      "button-padding-x": "space-4"
+    },
+    "component": {
+      "card-padding": "space-5",
+      "card-gap": "space-5",
+      "stack-gap": "space-4",
+      "section-gap": "space-6"
+    },
+    "section": {
+      "page-margin-mobile": "space-4",
+      "page-margin-desktop": "space-6",
+      "section-padding": "space-7",
+      "section-padding-desktop": "space-8"
+    }
+  },
+  "layout": {
+    "container_max": "72rem",
+    "prose_max": "42rem",
+    "gutter": "clamp(1rem, 4vw, 3rem)"
+  },
+  "touch": {
+    "min_target": "44px",
+    "rule": "Every link, button, and icon control has at least a 44x44px hit area."
+  },
+  "rhythm": {
+    "line_height_px": 27,
+    "rule": "Vertical margins are multiples of the body line height where practical."
+  }
+}

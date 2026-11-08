@@ -1,0 +1,62 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e5]:
+    - link [ref=f1e6] [cursor=pointer]:
+      - /url: /#
+      - img "Rainbowfern logo" [ref=f1e7]
+      - heading "Rainbowfern.com" [level=1] [ref=f1e8]
+    - navigation [ref=f1e9]:
+      - link "About" [ref=f1e10] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=f1e11] [cursor=pointer]:
+        - /url: /projects
+      - link "Experience" [ref=f1e12] [cursor=pointer]:
+        - /url: /experience
+      - link "Education" [ref=f1e13] [cursor=pointer]:
+        - /url: /education
+      - link "Contact" [ref=f1e14] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=f1e16]:
+    - generic [ref=f1e19]:
+      - heading "Projects" [level=1] [ref=f1e20]
+      - paragraph [ref=f1e21]: A list of my most recent projects, and links to the code and details.
+      - button "Button" [ref=f1e22] [cursor=pointer]
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - img "Collaborative Text Editor project" [ref=f1e26]
+        - generic [ref=f1e27]:
+          - heading "Collaborative Text Editor" [level=2] [ref=f1e28]
+          - paragraph [ref=f1e29]: An Electron-based desktop application that enables real-time collaborative text editing, featuring AI-powered code generation and task execution capabilities.
+          - generic [ref=f1e30]:
+            - link "Details" [ref=f1e31] [cursor=pointer]:
+              - /url: "#"
+            - link "Github Repo" [ref=f1e32] [cursor=pointer]:
+              - /url: https://github.com/distractdiverge/text-ai-collab-tool
+      - generic [ref=f1e33]:
+        - img "Portfolio Website project" [ref=f1e35]
+        - generic [ref=f1e36]:
+          - heading "Portfolio Website" [level=2] [ref=f1e37]
+          - paragraph [ref=f1e38]: This website, showcasing my projects, experience, and skills.
+          - generic [ref=f1e39]:
+            - link "Details" [ref=f1e40] [cursor=pointer]:
+              - /url: "#"
+            - link "Github Repo" [ref=f1e41] [cursor=pointer]:
+              - /url: https://github.com/distractdiverge/portfolio-website
+      - generic [ref=f1e42]:
+        - img "Offline Research Team project" [ref=f1e44]
+        - generic [ref=f1e45]:
+          - heading "Offline Research Team" [level=2] [ref=f1e46]
+          - paragraph [ref=f1e47]: This project showcases an innovative integration of CrewAI with Chainlit, creating a real-time interactive AI development assistant. It leverages CrewAI's multi-agent system to handle complex development tasks collaboratively, while Chainlit provides a user-friendly interface for monitoring and interacting with the AI agents. The system features real-time event handling and message streaming, allowing users to track agent activities, task progress, and outputs in a structured, conversational format. This project demonstrates advanced AI orchestration and user experience design, making it an excellent showcase for modern AI-powered development workflows.
+          - generic [ref=f1e48]:
+            - link "Details" [ref=f1e49] [cursor=pointer]:
+              - /url: "#"
+            - link "Github Repo" [ref=f1e50] [cursor=pointer]:
+              - /url: https://github.com/distractdiverge/poc-crewai
+  - contentinfo [ref=f1e53]:
+    - generic [ref=f1e56]:
+      - paragraph [ref=f1e57]: © 2026 Astrid 'Alex' Lapinski
+      - link "LinkedIn" [ref=f1e58] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/alexlapinski/
+      - link "Pangea" [ref=f1e59] [cursor=pointer]:
+        - /url: https://pangea.app/profile/allie-lapinski
+      - link "GitHub" [ref=f1e60] [cursor=pointer]:
+        - /url: https://github.com/distractdiverge

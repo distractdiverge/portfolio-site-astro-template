@@ -1,0 +1,18 @@
+{
+  "$description": "Border radius tokens. Small radii keep the paper feel crisp. Large rounding would read as playful, which is outside the Utility direction.",
+  "scale": {
+    "none": "0px",
+    "sm": "4px",
+    "md": "6px",
+    "lg": "8px",
+    "full": "9999px"
+  },
+  "usage": {
+    "cards": "md",
+    "buttons": "sm",
+    "inputs": "sm",
+    "images": "md",
+    "avatar": "full",
+    "pills (tags)": "full"
+  }
+}

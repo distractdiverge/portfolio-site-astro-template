@@ -1,0 +1,20 @@
+{
+  "$description": "Elevation tokens. Paper sheets get a single soft lift. Dark theme relies on borders and surface color instead of shadows, since shadows barely show on dark backgrounds.",
+  "light": {
+    "none": "none",
+    "sm": "0 1px 2px oklch(20% 0.01 300 / 0.08)",
+    "md": "0 2px 8px oklch(20% 0.01 300 / 0.10)"
+  },
+  "dark": {
+    "none": "none",
+    "sm": "none",
+    "md": "none",
+    "note": "Use a 1px line-strong border or the card surface color instead."
+  },
+  "usage": {
+    "card": "sm",
+    "card-hover": "md",
+    "popover-menu": "md"
+  },
+  "rule": "Maximum two elevation levels on any screen."
+}
