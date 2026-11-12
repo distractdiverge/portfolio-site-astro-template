@@ -105,14 +105,14 @@ const experiences: ExperienceItem[] = [
   <h1 class="text-3xl font-bold text-heading">Experience</h1>
   <p class="mt-4 text-ink-soft"> A collection of my professional experiences, showcasing my journey from intern to architect, and my current focus on software development and test automation.</p>
 
-  <div class="space-y-10">
+  <div class="mt-12 space-y-12">
       {experiences.map((exp) => (
-          <div class="mb-8">
-              <h2 class="text-2xl font-semibold">{exp.title}</h2>
-              <p class="text-md mb-2">
-                  {exp.company} {exp.location && `| ${exp.location}`} | {exp.dates}
+          <div>
+              <h2 class="text-2xl font-semibold text-heading">{exp.title}</h2>
+              <p class="mt-1 text-ink-muted">
+                  {exp.company} {exp.location && `| ${exp.location}`} | <span class="font-mono text-sm text-ink-subtle">{exp.dates}</span>
               </p>
-              <ul class="list-disc list-outside ml-5 space-y-1">
+              <ul class="mt-4 list-disc list-outside ml-5 space-y-2 text-ink-soft">
                   {exp.responsibilities.map((responsibility) => (
                       <li>{responsibility}</li>
                   ))}
