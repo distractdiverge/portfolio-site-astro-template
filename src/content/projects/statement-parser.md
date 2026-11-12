@@ -1,12 +1,13 @@
 ---
-title: Kiln Timer
-description: A firing schedule planner for ceramics studios. It turns a bisque or glaze program into a timed checklist, warns when a cone target is about to be overshot, and keeps a history of every firing so glaze results can be traced back to the exact schedule that produced them, which makes repeat tests far easier to compare.
+title: Statement Summarizer
+description: A set of python scripts to extract data from bank statements and summarize.
 codeUrl: https://github.com/example/kiln-timer
 assets:
   - label: Cone chart reference
     url: https://example.com/kiln-timer/cone-chart.pdf
 startedDate: 2025-08-20
 lastUpdated: 2026-11-01
+pinned: true
 ---
 
 ## Overview

@@ -1,6 +1,6 @@
 ---
-title: Trail Journal
-description: A small, private journal for logging hikes.
+title: Receipt Parser
+description: A series of python scripts and integration with AI models to parse out receipts for budgeting.
 codeUrl: https://github.com/example/trail-journal
 assets: []
 thumbnail: ../../assets/projects/trail-journal-thumb.svg

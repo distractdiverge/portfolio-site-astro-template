@@ -1,14 +1,14 @@
 ---
-title: Fern Finder
-description: A field guide app that identifies woodland ferns from a photo, leaf shape and spore pattern. It works offline, keeps a personal sightings log, and was built to help local walking groups learn the difference between look-alike species without needing an expert on hand.
+title: Portfolio Website
+description: This site itself. Building out a new portfolio website based on Astro.
 codeUrl: https://github.com/example/fern-finder
 assets:
   - label: Design notes (PDF)
     url: https://example.com/fern-finder/design-notes.pdf
   - label: Species dataset
     url: https://example.com/fern-finder/species.csv
-headerImage: ../../assets/projects/fern-finder-header.svg
-thumbnail: ../../assets/projects/fern-finder-thumb.svg
+headerImage: ../../assets/projects/portfolio-website.png
+thumbnail: ../../assets/projects/portfolio-website.png
 pinned: true
 startedDate: 2024-03-01
 lastUpdated: 2026-10-15
