@@ -1,121 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SkillsTag from '../components/SkillsTag.astro'
+import SkillsTag from '../components/SkillsTag.astro';
 
 const educationData = [
-    {
-        degree: 'Masters of Science in Software Engineering',
-        institution: 'Drexel, Philadelphia',
-        year: '2017',
-        focus: 'Machine Learning and Artificial Intelligence'
-    },
-    {
-        degree: 'Bachelors of Science in Computer Science',
-        institution: 'Drexel, Philadelphia',
-        year: '2008',
-        focus: 'Machine Learning and Artificial Intelligence'
-    },
+  {
+    degree: 'Masters of Science in Software Engineering',
+    institution: 'Drexel, Philadelphia',
+    year: '2017',
+    focus: 'Machine Learning and Artificial Intelligence',
+  },
+  {
+    degree: 'Bachelors of Science in Computer Science',
+    institution: 'Drexel, Philadelphia',
+    year: '2008',
+    focus: 'Machine Learning and Artificial Intelligence',
+  },
 ];
 
 const skillsData = {
-    languagesAndFrameworks: [
-        { name: 'UML', years: '17 years' },
-        { name: 'C#', years: '17 years' },
-        { name: 'Python', years: '17 years' },
-        { name: '.NET', years: '17 years' },
-        { name: 'Javascript', years: '17 years' },
-        { name: 'NodeJS', years: '17 years' },
-        { name: 'jQuery', years: '10 years' },
-        { name: 'Typescript', years: '10 years' },
-        { name: 'AngularJS', years: '8 years' },
-        { name: 'React', years: '8 years' },
-        { name: 'Team City', years: '7 years' },
-        { name: 'Miro', years: '6 years' },
-        { name: 'NextJS', years: '6 years' },
-        { name: 'Java', years: '6 years' },
-        { name: 'Bootstrap', years: '5 years' },
-        { name: 'LESS', years: '5 years' },
-        { name: 'SASS', years: '5 years' },
-        { name: 'BackboneJS', years: '3 years' },
-        { name: 'Ruby', years: '2 years' },
-        { name: 'PHP', years: '2 years' },
-        { name: 'Vite', years: '1 year' },
-    ],
-    techniquesAndRoles: [
-        { name: 'Technical Reqs', years: '17 years' },
-        { name: 'Functional Reqs', years: '17 years' },
-        { name: 'Code Review', years: '17 years' },
-        { name: 'Release Mgmt', years: '10 years' },
-        { name: 'Integration Mgmt', years: '10 years' },
-        { name: 'Annotated Specs', years: '10 years' },
-        { name: 'Stakeholder Int.', years: '6 years' },
-        { name: 'Dev Team Lead', years: '6 years' },
-        { name: 'Wireframes', years: '6 years' },
-    ],
-    tools: [
-        { name: 'Jenkins', years: '10 years' },
-        { name: 'Confluence', years: '8 years' },
-        { name: 'Redmine', years: '8 years' },
-        { name: 'Jira', years: '8 years' },
-        { name: 'Bamboo', years: '6 years' },
-        { name: 'Omnigraffle', years: '5 years' },
-        { name: 'Figma', years: '5 years' },
-        { name: 'Drupal', years: '3 years' },
-        { name: 'Wordpress', years: '2 years' },
-        { name: 'Adobe CQS', years: '1 year' },
-    ],
+  languagesAndFrameworks: [
+    { name: 'UML', years: '17 years' },
+    { name: 'C#', years: '17 years' },
+    { name: 'Python', years: '17 years' },
+    { name: '.NET', years: '17 years' },
+    { name: 'Javascript', years: '17 years' },
+    { name: 'NodeJS', years: '17 years' },
+    { name: 'jQuery', years: '10 years' },
+    { name: 'Typescript', years: '10 years' },
+    { name: 'AngularJS', years: '8 years' },
+    { name: 'React', years: '8 years' },
+    { name: 'Team City', years: '7 years' },
+    { name: 'Miro', years: '6 years' },
+    { name: 'NextJS', years: '6 years' },
+    { name: 'Java', years: '6 years' },
+    { name: 'Bootstrap', years: '5 years' },
+    { name: 'LESS', years: '5 years' },
+    { name: 'SASS', years: '5 years' },
+    { name: 'BackboneJS', years: '3 years' },
+    { name: 'Ruby', years: '2 years' },
+    { name: 'PHP', years: '2 years' },
+    { name: 'Vite', years: '1 year' },
+  ],
+  techniquesAndRoles: [
+    { name: 'Technical Reqs', years: '17 years' },
+    { name: 'Functional Reqs', years: '17 years' },
+    { name: 'Code Review', years: '17 years' },
+    { name: 'Release Mgmt', years: '10 years' },
+    { name: 'Integration Mgmt', years: '10 years' },
+    { name: 'Annotated Specs', years: '10 years' },
+    { name: 'Stakeholder Int.', years: '6 years' },
+    { name: 'Dev Team Lead', years: '6 years' },
+    { name: 'Wireframes', years: '6 years' },
+  ],
+  tools: [
+    { name: 'Jenkins', years: '10 years' },
+    { name: 'Confluence', years: '8 years' },
+    { name: 'Redmine', years: '8 years' },
+    { name: 'Jira', years: '8 years' },
+    { name: 'Bamboo', years: '6 years' },
+    { name: 'Omnigraffle', years: '5 years' },
+    { name: 'Figma', years: '5 years' },
+    { name: 'Drupal', years: '3 years' },
+    { name: 'Wordpress', years: '2 years' },
+    { name: 'Adobe CQS', years: '1 year' },
+  ],
 };
-
-
-const heroBackgroundImage = 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80'; // Placeholder image
 ---
 
 <Layout title="Education">
   <h1 class="text-3xl font-bold text-heading">Education</h1>
   <p class="mt-4 text-ink-soft">From formal education to hands-on expertise, my journey in technology has been driven by a passion for continuous learning and innovation.</p>
 
-  {/* Main Content Area */}
-  <div class="container mx-auto px-6 py-12 md:py-16 max-w-4xl">
-      {/* Education List */}
-      <div class="mb-12 md:mb-16">
-          <ul class="space-y-3">
-              {educationData.map((edu) => (
-                  <li class="text-lg text-gray-700 list-disc list-inside ml-4">
-                      <span class="font-semibold">{edu.degree}</span> | {edu.institution} | {edu.year}
-                      <p class="text-sm text-gray-600">Focus: {edu.focus}</p>
-                  </li>
-              ))}
-          </ul>
+  <section class="mt-12" aria-labelledby="degrees-heading">
+    <h2 id="degrees-heading" class="text-2xl font-semibold text-heading">Degrees</h2>
+    <ul class="mt-6 space-y-4">
+      {educationData.map((edu) => (
+        <li class="rounded-lg bg-card p-5 shadow-paper ring-1 ring-line">
+          <h3 class="text-lg font-semibold text-heading">{edu.degree}</h3>
+          <p class="mt-1 text-ink-muted">
+            {edu.institution} · <span class="font-mono text-sm">{edu.year}</span>
+          </p>
+          <p class="mt-2 text-sm text-ink-subtle">Focus: {edu.focus}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <div class="space-y-12 md:space-y-16">
+    <section class="mt-12" aria-labelledby="languages-heading">
+      <h2 id="languages-heading" class="text-2xl font-semibold text-heading">Languages and Frameworks</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        {skillsData.languagesAndFrameworks.map((skill) => (
+          <SkillsTag name={skill.name} years={skill.years} />
+        ))}
       </div>
+    </section>
 
-      {/* Skills Sections */}
-      <div class="space-y-12 md:space-y-16">
-          <div>
-              <h2 class="text-3xl font-bold text-gray-900 mb-6">Languages and Frameworks</h2>
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {skillsData.languagesAndFrameworks.map((skill) => (
-                      <SkillsTag name={skill.name} years={skill.years} />
-                  ))}
-              </div>
-          </div>
-
-          <div>
-              <h2 class="text-3xl font-bold text-gray-900 mb-6">Techniques and Roles</h2>
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {skillsData.techniquesAndRoles.map((skill) => (
-                      <SkillsTag key={skill.name} name={skill.name} years={skill.years} />
-                  ))}
-              </div>
-          </div>
-
-          <div>
-              <h2 class="text-3xl font-bold text-gray-900 mb-6">Tools</h2>
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {skillsData.tools.map((skill) => (
-                      <SkillsTag key={skill.name} name={skill.name} years={skill.years} />
-              ))}
-              </div>
-          </div>
+    <section aria-labelledby="techniques-heading">
+      <h2 id="techniques-heading" class="text-2xl font-semibold text-heading">Techniques and Roles</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        {skillsData.techniquesAndRoles.map((skill) => (
+          <SkillsTag name={skill.name} years={skill.years} />
+        ))}
       </div>
+    </section>
+
+    <section aria-labelledby="tools-heading">
+      <h2 id="tools-heading" class="text-2xl font-semibold text-heading">Tools</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        {skillsData.tools.map((skill) => (
+          <SkillsTag name={skill.name} years={skill.years} />
+        ))}
+      </div>
+    </section>
   </div>
 </Layout>
