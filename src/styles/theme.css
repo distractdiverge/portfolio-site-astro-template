@@ -48,6 +48,11 @@
   --color-success: oklch(42% 0.12 155);
   --color-error: oklch(45% 0.19 27);
 
+  /* Title scrim over project header images: a fixed tinted dark in both themes,
+     so the light title stays readable on any photo. */
+  --color-scrim: oklch(20% 0.01 300 / 0.6);
+  --color-on-scrim: oklch(99.5% 0.005 85);
+
   /* Solid placeholder shown when a project has no image (replaces the old gradient) */
   --color-fallback: oklch(86% 0.008 300);
 
